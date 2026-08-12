@@ -1,0 +1,417 @@
+/* =========================================================
+   DESIGN TOKENS
+   A warmer, more "client-facing" palette than the portfolio
+   site — off-white background, indigo as primary brand
+   color, coral as a warm accent for emphasis/CTAs.
+   ========================================================= */
+:root {
+  --color-bg: #FAFAF8;
+  --color-surface: #FFFFFF;
+  --color-muted-bg: #F1F1FB;
+  --color-text: #22252A;
+  --color-text-muted: #666B73;
+  --color-primary: #3D4FB5;
+  --color-primary-dark: #2E3B8C;
+  --color-accent: #E8734A;
+  --color-border: #E7E7E2;
+
+  --font-display: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --max-width: 1080px;
+  --radius: 12px;
+  --transition: 0.2s ease;
+}
+
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+/* =========================================================
+   HEADER / NAV (Flexbox)
+   ========================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(250, 250, 248, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  position: relative;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.logo__dot {
+  color: var(--color-accent);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav a:not(.nav__cta):hover {
+  color: var(--color-primary);
+}
+
+.nav__cta {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 999px;
+  transition: background-color var(--transition);
+}
+
+.nav__cta:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav__toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  padding: 96px 0 80px;
+}
+
+.hero__inner {
+  max-width: 700px;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero__subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid transparent;
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn--ghost {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-muted-bg);
+}
+
+/* =========================================================
+   SECTIONS (shared)
+   ========================================================= */
+.section {
+  padding: 72px 0;
+}
+
+.section--muted {
+  background-color: var(--color-muted-bg);
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+/* =========================================================
+   FEATURES (CSS Grid)
+   ========================================================= */
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.feature-card:hover {
+  box-shadow: 0 10px 28px rgba(34, 37, 42, 0.07);
+  transform: translateY(-3px);
+}
+
+.feature-card__icon {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
+.feature-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+/* =========================================================
+   WHY ME
+   ========================================================= */
+.why__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+}
+
+.why__list li {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.why__list strong {
+  color: var(--color-text);
+}
+
+/* =========================================================
+   CTA / CONTACT
+   ========================================================= */
+.cta__inner {
+  text-align: center;
+  max-width: 560px;
+}
+
+.cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 12px;
+}
+
+.cta p {
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: 28px 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.footer__links {
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
+}
+
+.footer__links a:hover {
+  color: var(--color-primary);
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+@media (max-width: 720px) {
+  .nav {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition);
+    padding: 0 24px;
+  }
+
+  .nav.is-open {
+    max-height: 220px;
+    padding: 16px 24px;
+  }
+
+  .nav a {
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .nav__cta {
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__toggle.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav__toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__toggle.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hero {
+    padding-top: 64px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+section[id] {
+  scroll-margin-top: 80px;
+}

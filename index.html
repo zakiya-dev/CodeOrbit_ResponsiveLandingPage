@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zakiya Sharieff | Web Dev Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="header__inner container">
+      <a href="#" class="logo">Zakiya<span class="logo__dot">.</span>dev</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#services">Services</a>
+        <a href="#why-me">Why Me</a>
+        <a href="#contact" class="nav__cta">Get In Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__inner container">
+        <p class="eyebrow">Freelance Web Development</p>
+        <h1 class="hero__title">
+          Clean, responsive websites — built with care, priced fairly.
+        </h1>
+        <p class="hero__subtitle">
+          <!-- EDIT: adjust tone/wording to match how you want to present yourself -->
+          I'm a web development student taking on small freelance projects —
+          landing pages, portfolios, and simple web apps — to grow my skills
+          while helping you get a clean, functional site online.
+        </p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary">Start a project</a>
+          <a href="#services" class="btn btn--ghost">See what I offer</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES / SERVICES ============ -->
+    <section id="services" class="section">
+      <div class="container">
+        <p class="eyebrow">What I Offer</p>
+        <h2 class="section__title">Services</h2>
+
+        <div class="features__grid">
+          <article class="feature-card">
+            <div class="feature-card__icon">🖥️</div>
+            <h3>Landing Pages</h3>
+            <p>A focused, single-page site for your product, service, or personal brand — built to load fast and look sharp on any device.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>Every site I build is tested and styled to work smoothly across desktop, tablet, and mobile — no squinting or pinch-zooming.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon">🎨</div>
+            <h3>Portfolio Websites</h3>
+            <p>A clean, personal site to showcase your work, skills, and contact details — great for students, freelancers, and job seekers.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon">🛠️</div>
+            <h3>Small Fixes &amp; Tweaks</h3>
+            <p>Already have a site that needs a layout fix, a new section, or some styling cleanup? I can help with focused, small-scope updates.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY ME ============ -->
+    <section id="why-me" class="section section--muted">
+      <div class="container">
+        <p class="eyebrow">Why Work With Me</p>
+        <h2 class="section__title">A student's care, a professional's process</h2>
+        <ul class="why__list">
+          <li><strong>Clear communication</strong> — I'll keep you updated at every step, no jargon.</li>
+          <li><strong>Clean code</strong> — organized, commented, and easy to hand off or extend later.</li>
+          <li><strong>Fair, flexible pricing</strong> — friendly rates for students, small businesses, and early-stage ideas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / CTA ============ -->
+    <section id="contact" class="section cta">
+      <div class="container cta__inner">
+        <h2>Have a project in mind?</h2>
+        <p>Tell me a bit about what you need — I'll get back to you within a day or two.</p>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zakiyasharieff18@gmail.com" target="_blank" rel="noopener" class="btn btn--primary">Email Me</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Zakiya Sharieff. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer__links">
+        <a href="https://github.com/zakiya-dev" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/zakiya-sharieff" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
