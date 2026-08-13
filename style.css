@@ -186,10 +186,8 @@ button:focus-visible {
 }
 
 .hero__subtitle {
-  color: var(--color-text-muted);
-  font-size: 1.05rem;
-  margin-bottom: 32px;
-  max-width: 560px;
+  color: #FFFFFF;
+  opacity: 0.95;
 }
 
 .hero__actions {
